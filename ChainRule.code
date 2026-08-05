@@ -1,0 +1,27 @@
+import sympy
+
+# Define symbolic variables
+x, u, y = sympy.symbols('x u y')
+
+# Define the functions
+u_func = x**2
+y_func = sympy.sin(u)
+
+# Compute the derivatives
+du_dx = sympy.diff(u_func, x)
+dy_du = sympy.diff(y_func, u)
+
+# Apply the chain rule: dy/dx = (dy/du) * (du/dx)
+dy_dx = dy_du * du_dx
+
+print(f"u = f(x) = {u_func}")
+print(f"y = g(u) = {y_func}")
+print(f"\ndu/dx = {du_dx}")
+print(f"dy/du = {dy_du}")
+print(f"\nApplying Chain Rule: dy/dx = (dy/du) * (du/dx) = {dy_dx}")
+
+# Alternatively, substitute u into y and differentiate directly to verify
+y_as_func_of_x = sympy.sin(x**2)
+dy_dx_direct = sympy.diff(y_as_func_of_x, x)
+print(f"Direct calculation dy/dx: {dy_dx_direct}")
+# The results should be identical
