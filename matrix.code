@@ -1,0 +1,23 @@
+import numpy as np
+
+# Define a 2x2 matrix
+M1 = np.array([
+    [1, 2],
+    [3, 4]
+])
+print(f"Matrix 1:\n{M1}")
+
+# Define a 2x3 matrix
+M2 = np.array([
+    [5, 6, 7],
+    [8, 9, 10]
+])
+print(f"Matrix 2:\n{M2}")
+
+# Matrix addition
+M_sum = M1 + np.array([[1,1],[1,1]])
+print(f"Matrix sum (M1 + [[1,1],[1,1]]):\n{M_sum}")
+
+# Scalar multiplication
+M_scaled = 2 * M1
+print(f"Scaled matrix (2 * M1):\n{M_scaled}")
