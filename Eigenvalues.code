@@ -1,0 +1,25 @@
+import numpy as np
+from numpy.linalg import eig
+
+# Define a sample matrix
+M = np.array([
+    [4, 1],
+    [2, 3]
+])
+print(f"Matrix M:\n{M}")
+
+# Calculate eigenvalues and eigenvectors
+eigenvalues, eigenvectors = eig(M)
+
+print(f"\nEigenvalues: {eigenvalues}")
+print(f"Eigenvectors:\n{eigenvectors}")
+
+# Verify an eigenvalue/eigenvector pair (Mv = lambda*v)
+# For the first eigenvalue and eigenvector
+v = eigenvectors[:, 0] # First eigenvector
+l = eigenvalues[0]      # First eigenvalue
+
+print(f"\nChecking Mv = lambda*v for the first pair:")
+print(f"M @ v = {np.dot(M, v)}")
+print(f"lambda * v = {l * v}")
+# The results should be very close, accounting for floating point precision
