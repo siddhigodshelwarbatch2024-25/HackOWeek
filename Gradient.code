@@ -1,0 +1,27 @@
+import sympy
+
+# Define symbolic variables
+x, y = sympy.symbols('x y')
+
+# Define a multivariate function
+f_xy = x**2 + y**3 + 2*x*y
+print(f"Function f(x, y): {f_xy}")
+
+# Compute partial derivatives
+df_dx = sympy.diff(f_xy, x)
+df_dy = sympy.diff(f_xy, y)
+
+print(f"\nPartial derivative df/dx: {df_dx}")
+print(f"Partial derivative df/dy: {df_dy}")
+
+# The gradient vector is [df/dx, df/dy]
+print(f"Gradient vector: [{df_dx}, {df_dy}]")
+
+# Evaluate the gradient at a point (e.g., x=1, y=2)
+point_x = 1
+point_y = 2
+
+gradient_x_at_point = df_dx.subs({x: point_x, y: point_y})
+gradient_y_at_point = df_dy.subs({x: point_x, y: point_y})
+
+print(f"\nGradient at (x={point_x}, y={point_y}): [{gradient_x_at_point}, {gradient_y_at_point}]")
