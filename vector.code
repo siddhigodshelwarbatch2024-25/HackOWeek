@@ -1,0 +1,17 @@
+import numpy as np
+
+# Define a 2D vector
+v1 = np.array([2, 3])
+print(f"Vector 1: {v1}")
+
+# Define a 3D vector
+v2 = np.array([1, -2, 4])
+print(f"Vector 2: {v2}")
+
+# Vector addition
+v_sum = v1 + np.array([1, 1]) # Example for 2D
+print(f"Vector sum (v1 + [1,1]): {v_sum}")
+
+# Scalar multiplication
+v_scaled = 3 * v1
+print(f"Scaled vector (3 * v1): {v_scaled}")
