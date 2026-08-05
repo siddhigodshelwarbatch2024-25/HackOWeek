@@ -1,0 +1,17 @@
+import sympy
+
+# Define a symbolic variable
+x = sympy.Symbol('x')
+
+# Define a function
+f_x = x**2 + 3*x + 5
+print(f"Function f(x): {f_x}")
+
+# Compute the derivative
+df_dx = sympy.diff(f_x, x)
+print(f"Derivative df/dx: {df_dx}")
+
+# Evaluate the derivative at a point (e.g., x=2)
+point = 2
+df_dx_at_point = df_dx.subs(x, point)
+print(f"Derivative at x={point}: {df_dx_at_point}")
