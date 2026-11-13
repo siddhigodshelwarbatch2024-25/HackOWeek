@@ -1,0 +1,9 @@
+from sklearn.preprocessing import PolynomialFeatures
+
+# To perform polynomial regression, we would first transform the features.
+# For example, for a 2nd-degree polynomial:
+# poly = PolynomialFeatures(degree=2)
+# X_poly = poly.fit_transform(X_train)
+# Then, a LinearRegression model would be fitted on X_poly.
+
+print("Polynomial Regression would involve feature transformation using PolynomialFeatures and then applying LinearRegression.")
