@@ -1,0 +1,17 @@
+import numpy as np
+
+A = np.array([
+    [4, 1],
+    [2, 3]
+])
+
+eigenvalues, eigenvectors = np.linalg.eig(A)
+
+print("Matrix:")
+print(A)
+
+print("\nEigenvalues:")
+print(eigenvalues)
+
+print("\nEigenvectors:")
+print(eigenvectors)
