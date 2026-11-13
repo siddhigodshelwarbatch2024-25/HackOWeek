@@ -1,0 +1,46 @@
+from sklearn.linear_model import LogisticRegression
+from sklearn.datasets import make_classification
+from sklearn.metrics import accuracy_score, classification_report
+
+# Generate some dummy data for classification (binary classification)
+X_cls, y_cls = make_classification(n_samples=100, n_features=2, n_informative=2,
+                                   n_redundant=0, n_clusters_per_class=1,
+                                   random_state=42)
+
+# Split data into training and testing sets
+X_train_cls, X_test_cls, y_train_cls, y_test_cls = train_test_split(X_cls, y_cls, test_size=0.2, random_state=42)
+
+# Create a Logistic Regression model
+log_reg_model = LogisticRegression()
+
+# Train the model
+log_reg_model.fit(X_train_cls, y_train_cls)
+
+# Make predictions
+y_pred_cls = log_reg_model.predict(X_test_cls)
+
+# Evaluate the model
+accuracy = accuracy_score(y_test_cls, y_pred_cls)
+print(f"Accuracy: {accuracy:.2f}")
+print("\nClassification Report:")
+print(classification_report(y_test_cls, y_pred_cls))
+
+# Plot the decision boundary (for 2 features)
+plt.figure(figsize=(8, 6))
+plt.scatter(X_cls[:, 0], X_cls[:, 1], c=y_cls, cmap='viridis', edgecolors='k', marker='o', s=50)
+
+# Get the min and max for the plot
+x_min, x_max = X_cls[:, 0].min() - 1, X_cls[:, 0].max() + 1
+y_min, y_max = X_cls[:, 1].min() - 1, X_cls[:, 1].max() + 1
+xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.02),
+                     np.arange(y_min, y_max, 0.02))
+
+Z = log_reg_model.predict(np.c_[xx.ravel(), yy.ravel()])
+Z = Z.reshape(xx.shape)
+
+plt.contourf(xx, yy, Z, alpha=0.3, cmap='viridis')
+plt.title('Logistic Regression Decision Boundary')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.grid(True)
+plt.show()
