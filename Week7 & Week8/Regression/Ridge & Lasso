@@ -1,0 +1,11 @@
+from sklearn.linear_model import Ridge, Lasso
+
+# Ridge and Lasso are regularized linear regression models.
+# Ridge adds L2 regularization, Lasso adds L1 regularization.
+# For example:
+# ridge_model = Ridge(alpha=1.0)
+# ridge_model.fit(X_train, y_train)
+# lasso_model = Lasso(alpha=1.0)
+# lasso_model.fit(X_train, y_train)
+
+print("Ridge and Lasso Regression are regularized forms of linear regression used to prevent overfitting.")
