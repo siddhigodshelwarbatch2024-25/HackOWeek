@@ -1,0 +1,9 @@
+from sklearn.neighbors import KNeighborsClassifier
+
+# KNN is a non-parametric, instance-based learning algorithm.
+# For example:
+# knn_model = KNeighborsClassifier(n_neighbors=5)
+# knn_model.fit(X_train_cls, y_train_cls)
+# y_pred_knn = knn_model.predict(X_test_cls)
+
+print("KNN would involve creating a KNeighborsClassifier and fitting it to the data.")
