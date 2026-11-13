@@ -1,0 +1,15 @@
+plt.figure(figsize=(10, 7))
+
+scatter = plt.scatter(
+    X_tsne[:, 0],
+    X_tsne[:, 1],
+    c=y,
+    cmap='tab10',
+    s=5
+)
+
+plt.colorbar(scatter)
+plt.xlabel("t-SNE Dimension 1")
+plt.ylabel("t-SNE Dimension 2")
+plt.title("MNIST - t-SNE")
+plt.show()
